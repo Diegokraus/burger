@@ -65,3 +65,27 @@ function showProductsWithDescount() {
 
 }
 
+function reduce(){
+    clearCards()
+
+    const productsReducedPrice = menuOptions.reduce((accumulator, currentValue)=>{
+        return accumulator +currentValue.price},0 )
+
+        const li = document.createElement('li')
+
+        const total = document.createElement('p')
+        total.textContent = `A soma de todos os itens do menu é: R$ ${productsReducedPrice}`
+
+        ul.appendChild(li)
+        li.appendChild(total)
+}
+
+function filterMenu(){
+    clearCards()
+    const filterMenu =  menuOptions.filter((item)=> item.vegan)
+
+    filterMenu.forEach((item) => {
+        createCards(item)
+    })
+}
+
